@@ -17,7 +17,7 @@ w, h = temp.shape[::-1]
 bottom_right = (top_left[0] + w, top_left[1] + h)
 
 #検出領域を四角で囲んで保存
-result = cv2.imread("img.png")
+result = cv2.imread("test/img.png")
 cv2.rectangle(result,top_left, bottom_right, (255, 0, 0), 2)
 cv2.imwrite("result.png", result)
 
