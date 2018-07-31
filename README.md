@@ -10,3 +10,8 @@ https://www.tech-tech.xyz/archives/3065942.html
 
 openCVのインストール
 pip install opencv-python
+
+
+Rasberry pi
+sudo apt-get install libopencv-dev
+sudo apt-get install python-opencv
