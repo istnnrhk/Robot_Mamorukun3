@@ -13,5 +13,10 @@ pip install opencv-python
 
 
 Rasberry pi
+
+sudo apt-get install libatlas-base-dev
+sudo apt-get install libjasper-dev
+sudo apt-get install libqttest4
+
 sudo apt-get install libopencv-dev
 sudo apt-get install python-opencv
