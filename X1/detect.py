@@ -1,10 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+import cv2
 from time import sleep
 from numpy import sqrt
 import copy
-import cv2
-
 
 #画像をグレースケールで読み込む
 img_color = cv2.imread("img.png",  cv2.IMREAD_COLOR)
@@ -15,11 +14,6 @@ img_gray  = cv2.cvtColor(img_color,cv2.COLOR_RGB2GRAY)
 
 #マッチングテンプレートを実行
 #比較方法はcv2.TM_CCOEFF_NORMEDを選択
-#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_SQDIFF)
-#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_SQDIFF_NORMED)
-#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCORR)
-#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCORR_NORMED)
-#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCOEFF)
 result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCOEFF_NORMED)
 
 #検出結果から検出領域の位置を取得
@@ -36,8 +30,8 @@ cv2.rectangle(result,top_left, bottom_right, (255, 0, 0), 2)
 target_x = top_left[0]+int(w/2)
 target_y = top_left[1]+int(h/2)
 
-print("Target position : center   = ({}, {})".
-      format(target_x, target_y))
+print("Target position : center   = ({}, {}) : max_val = {:.2f}".
+      format(target_x, target_y, max_val))
 
 # 
 img_red = copy.deepcopy(img_color)
@@ -65,3 +59,4 @@ print("Distance between target and lasar : {:.0f}".format(distance))
 cv2.imshow('result',result)
 cv2.waitKey(10000) # waiting key input [ms]
 cv2.destroyAllWindows()
+
