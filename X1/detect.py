@@ -2,6 +2,7 @@
 # -*- coding: utf-8 -*-
 from time import sleep
 from numpy import sqrt
+import copy
 import cv2
 
 
@@ -14,6 +15,11 @@ img_gray  = cv2.cvtColor(img_color,cv2.COLOR_RGB2GRAY)
 
 #マッチングテンプレートを実行
 #比較方法はcv2.TM_CCOEFF_NORMEDを選択
+#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_SQDIFF)
+#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_SQDIFF_NORMED)
+#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCORR)
+#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCORR_NORMED)
+#result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCOEFF)
 result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCOEFF_NORMED)
 
 #検出結果から検出領域の位置を取得
@@ -23,9 +29,9 @@ w, h = temp_gray.shape[::-1]
 bottom_right = (top_left[0] + w, top_left[1] + h)
 
 #検出領域を四角で囲んで保存
-result = cv2.imread("img.png")
+result = img_color
 cv2.rectangle(result,top_left, bottom_right, (255, 0, 0), 2)
-cv2.imwrite("result.png", result)
+
 
 target_x = top_left[0]+int(w/2)
 target_y = top_left[1]+int(h/2)
@@ -34,10 +40,11 @@ print("Target position : center   = ({}, {})".
       format(target_x, target_y))
 
 # 
-img_color[:, : ,(0, 1)] = 0
+img_red = copy.deepcopy(img_color)
+img_red[:, : ,(0, 1)] = 0
 
 min_val, max_val, min_loc, max_loc = \
-    cv2.minMaxLoc(cv2.cvtColor(img_color,cv2.COLOR_RGB2GRAY))
+    cv2.minMaxLoc(cv2.cvtColor(img_red,cv2.COLOR_RGB2GRAY))
 
 lasar_x = max_loc[0]
 lasar_y = max_loc[1]
