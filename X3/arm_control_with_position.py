@@ -13,7 +13,7 @@ def move( a_deg = 0 , b_deg = 0, waiting = 0):
   a_deg_offset = 73
   b_deg_offset = 80
 
-  move_A_deg = int( a_deg_offset - a_deg )
+  move_A_deg = int( a_deg_offset + a_deg )
   move_B_deg = int( b_deg_offset - b_deg )
   pi.pwmWrite( servoA_pin, move_A_deg )
   pi.pwmWrite( servoB_pin, move_B_deg )
