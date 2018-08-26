@@ -62,8 +62,17 @@ cv2.waitKey(10000) # waiting key input [ms]
 cv2.destroyAllWindows()
 
 
+# servo controll
 cmd = "sudo python3 arm_control_with_position.py {} {}".format(target_x, target_y)
 print(cmd)
 subprocess.check_call(cmd.split())
-            
 
+# motor controll
+cmd = "sudo python3 motor.py"
+print(cmd)
+subprocess.check_call(cmd.split())
+
+# home position
+cmd = "sudo python3 arm_control.py {} {}".format(0, 0)
+print(cmd)
+subprocess.check_call(cmd.split())

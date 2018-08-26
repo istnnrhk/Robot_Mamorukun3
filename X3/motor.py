@@ -10,7 +10,7 @@ pi.pinMode( motor2_pin, 1 )
 
 pi.digitalWrite( motor1_pin, 1 )
 pi.digitalWrite( motor2_pin, 0 )
-time.sleep(4)
+time.sleep(1)
 
 pi.digitalWrite( motor1_pin, 0 )
 pi.digitalWrite( motor2_pin, 0 )
