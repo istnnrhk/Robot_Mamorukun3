@@ -9,8 +9,8 @@ import subprocess
 
 
 #画像をグレースケールで読み込む
-img_color = cv2.imread("img.png",  cv2.IMREAD_COLOR)
-temp_gray = cv2.imread("temp.png", cv2.IMREAD_GRAYSCALE)
+img_color = cv2.imread("/home/pi/Lab/Robot_Mamorukun3/X3/img.png",  cv2.IMREAD_COLOR)
+temp_gray = cv2.imread("/home/pi/Lab/Robot_Mamorukun3/X3/temp.png", cv2.IMREAD_GRAYSCALE)
 
 #
 img_gray  = cv2.cvtColor(img_color,cv2.COLOR_RGB2GRAY)
@@ -72,16 +72,16 @@ cv2.destroyAllWindows()
 '''
 
 # servo controll
-cmd = "sudo python3 arm_control_with_position.py {} {}".format(target_x, target_y)
+cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/arm_control_with_position.py {} {}".format(target_x, target_y)
 print(cmd)
 subprocess.check_call(cmd.split())
 
 # motor controll
-cmd = "sudo python3 motor.py"
+cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/motor.py"
 print(cmd)
 subprocess.check_call(cmd.split())
 
 # home position
-cmd = "sudo python3 arm_control.py {} {}".format(0, 0)
+cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/arm_control.py {} {}".format(0, 0)
 print(cmd)
 subprocess.check_call(cmd.split())
