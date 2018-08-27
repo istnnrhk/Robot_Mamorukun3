@@ -25,12 +25,14 @@ def move( a_deg = 0 , b_deg = 0, waiting = 0):
 #-------------------------------------------------------
 pi.wiringPiSetupGpio()
 
-led_pin = 23
+laser_pin  = 23
+led_pin    = 10
 servoA_pin = 18 # Altura
 servoB_pin = 13 # Azimuth
 
 # set pinMode
-pi.pinMode( led_pin, 1 )
+pi.pinMode( laser_pin , 1 )
+pi.pinMode( led_pin   , 1 )
 pi.pinMode( servoA_pin, 2 )
 pi.pinMode( servoB_pin, 2 )
 # set pwm
@@ -41,7 +43,8 @@ pi.pwmSetClock(375)
 #--------------------------------------------------------
 # MAIN PROCESS
 #--------------------------------------------------------
-pi.digitalWrite( led_pin, 1 ) # LED on
+pi.digitalWrite( laser_pin, 1 ) # Laser on
+pi.digitalWrite( led_pin  , 1 ) # LED on
 #move(   0,   0, 0)
 
 #for y in range(-10, 10):
@@ -102,5 +105,5 @@ else:
 
 move( x_degree, y_degree, 0.1 )
 
-#pi.digitalWrite( led_pin, 0 ) # LED off
-
+#pi.digitalWrite( laser_pin, 0 ) # Laser off
+#pi.digitalWrite( led_pin  , 0 ) # LED off

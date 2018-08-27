@@ -7,6 +7,7 @@ import cv2
 import copy
 import subprocess
 
+
 #画像をグレースケールで読み込む
 img_color = cv2.imread("img.png",  cv2.IMREAD_COLOR)
 temp_gray = cv2.imread("temp.png", cv2.IMREAD_GRAYSCALE)
@@ -35,6 +36,12 @@ target_y = top_left[1]+int(h/2)
 
 print("Target position : center   = ({}, {}) : max_val = {:.2f}".
       format(target_x, target_y, max_val))
+
+# if confidence is less than 0.5, skip this process
+if max_val < 0.5:
+    print("low confidence")
+    exit(0)
+
 ''' to reduce temperature, omit LED process
 # 
 img_red = copy.deepcopy(img_color)
