@@ -10,8 +10,8 @@ import wiringpi as pi, time
 # PARTS
 #-------------------------------------------------------
 def move( a_deg = 0 , b_deg = 0, waiting = 0):
-  a_deg_offset = 73
-  b_deg_offset = 80
+  a_deg_offset = 77
+  b_deg_offset = 83
 
   move_A_deg = int( a_deg_offset + a_deg )
   move_B_deg = int( b_deg_offset - b_deg )

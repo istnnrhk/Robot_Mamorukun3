@@ -10,8 +10,8 @@ import wiringpi as pi, time
 # PARTS
 #-------------------------------------------------------
 def move( a_deg = 0 , b_deg = 0, waiting = 0):
-  a_deg_offset = 73
-  b_deg_offset = 80
+  a_deg_offset = 77
+  b_deg_offset = 83
 
   move_A_deg = int( a_deg_offset + a_deg )
   move_B_deg = int( b_deg_offset - b_deg )
@@ -61,39 +61,43 @@ y_position = int(args[2])
 
 # x
 
-if   x_position < 270:
+if   x_position < 124:
   x_degree = -10
-elif x_position < 351:
-  x_degree = -7
-elif x_position < 432:
-  x_degree = -4
-elif x_position < 524:
+elif x_position < 221:
+  x_degree = -8
+elif x_position < 310:
+  x_degree = -5
+elif x_position < 394:
   x_degree = -2
-elif x_position < 616:
-  x_degree = 1
-elif x_position < 698:
-  x_degree = 4
-elif x_position < 779:
-  x_degree = 6
-else:
+elif x_position < 496:
+  x_degree = 0
+elif x_position < 602:
+  x_degree = 3
+elif x_position < 692:
+  x_degree = 5
+elif x_position < 783:
+  x_degree = 8
+elif x_position < 879:
   x_degree = 10
+else:
+  x_degree = 11
 
 # y
 
-if   y_position < 0:
-  y_degree = 15
-elif y_position < 93:
-  y_degree = 12
-elif y_position < 202:
+if   y_position < 123:
+  y_degree = 17
+elif y_position < 234:
+  y_degree = 13
+elif y_position < 350:
   y_degree = 9
-elif y_position < 310:
-  y_degree = 5
-elif y_position < 417:
-  y_degree = 2
-elif y_position < 523:
-  y_degree = -2
+elif y_position < 470:
+  y_degree = 6
+elif y_position < 595:
+  y_degree = 0
+elif y_position < 723:
+  y_degree = -6
 else:
-  y_degree = -5
+  y_degree = -7
 
 
 move( x_degree, y_degree, 0.1 )
