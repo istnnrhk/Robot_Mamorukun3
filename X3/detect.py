@@ -1,8 +1,9 @@
 #! /usr/bin/env python
 # -*- coding: utf-8 -*-
+#import picamera
 import cv2
-from time import sleep
-from numpy import sqrt
+#from time import sleep
+#from numpy import sqrt
 import copy
 import subprocess
 
@@ -21,19 +22,20 @@ result = cv2.matchTemplate(img_gray, temp_gray, cv2.TM_CCOEFF_NORMED)
 min_val, max_val, min_loc, max_loc = cv2.minMaxLoc(result)
 top_left = max_loc
 w, h = temp_gray.shape[::-1]
+''' to reduce temperature, omit saving process
 bottom_right = (top_left[0] + w, top_left[1] + h)
 
 #検出領域を四角で囲んで保存
 result = img_color
 cv2.rectangle(result,top_left, bottom_right, (255, 0, 0), 2)
-
+'''
 
 target_x = top_left[0]+int(w/2)
 target_y = top_left[1]+int(h/2)
 
 print("Target position : center   = ({}, {}) : max_val = {:.2f}".
       format(target_x, target_y, max_val))
-
+''' to reduce temperature, omit LED process
 # 
 img_red = copy.deepcopy(img_color)
 img_red[:, : ,(0, 1)] = 0
@@ -60,7 +62,7 @@ print("Distance between target and lasar : {:.0f}".format(distance))
 cv2.imshow('result',result)
 cv2.waitKey(10000) # waiting key input [ms]
 cv2.destroyAllWindows()
-
+'''
 
 # servo controll
 cmd = "sudo python3 arm_control_with_position.py {} {}".format(target_x, target_y)

@@ -55,7 +55,6 @@ pi.digitalWrite( led_pin, 1 ) # LED on
 #move(   0,   0, 1 )
 
 args = sys.argv
-move( int(args[1]), int(args[2]), 0.1 )
+move( int(args[1]), int(args[2]), 2.1 )
 
-#pi.digitalWrite( led_pin, 0 ) # LED off
-
+pi.digitalWrite( led_pin, 0 ) # LED off
