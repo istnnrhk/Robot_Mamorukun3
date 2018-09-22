@@ -11,7 +11,6 @@ https://www.tech-tech.xyz/archives/3065942.html
 openCVのインストール
 pip install opencv-python
 
-
 Rasberry pi
 
 sudo apt-get install libatlas-base-dev
@@ -20,3 +19,6 @@ sudo apt-get install libqttest4
 
 sudo apt-get install libopencv-dev
 sudo apt-get install python-opencv
+
+Rasbianのインストール方法 Mac編
+https://www.raspberrypi.org/documentation/installation/installing-images/mac.md
