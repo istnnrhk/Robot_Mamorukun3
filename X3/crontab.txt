@@ -20,4 +20,4 @@
 # For more information see the manual pages of crontab(5) and cron(8)
 # 
 # m h  dom mon dow   command
-@reboot /home/pi/Lab/Robot_Mamorukun3/X3/run.sh > /home/pi/Lab/Robot_Mamorukun3/X3/cron.log
+@reboot /home/pi/Lab/Robot_Mamorukun3/X3/run.sh > /home/pi/Lab/Robot_Mamorukun3/X3/cron.log 2> /home/pi/Lab/Robot_Mamorukun3/X3/stderr.log
