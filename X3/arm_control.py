@@ -43,7 +43,7 @@ pi.pwmSetClock(375)
 #--------------------------------------------------------
 # MAIN PROCESS
 #--------------------------------------------------------
-pi.digitalWrite( led_pin, 1 ) # LED on
+pi.digitalWrite( led_pin, 0) # LED on
 #move(   0,   0, 0)
 
 #for y in range(-10, 10):
@@ -60,4 +60,4 @@ args = sys.argv
 move( int(args[1]), int(args[2]), 2.1 )
 
 pi.digitalWrite( laser_pin, 0 ) # Laser off
-pi.digitalWrite( led_pin, 0 ) # LED off
+pi.digitalWrite( led_pin, 1 ) # LED off

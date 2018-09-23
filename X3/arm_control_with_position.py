@@ -44,7 +44,7 @@ pi.pwmSetClock(375)
 # MAIN PROCESS
 #--------------------------------------------------------
 pi.digitalWrite( laser_pin, 1 ) # Laser on
-pi.digitalWrite( led_pin  , 1 ) # LED on
+pi.digitalWrite( led_pin  , 0 ) # LED on
 #move(   0,   0, 0)
 
 #for y in range(-10, 10):
@@ -102,7 +102,7 @@ elif y_position < 723:
 else:
   y_degree = -7
 
-
+# debugging now
 move( x_degree, y_degree, 0.1 )
 
 #pi.digitalWrite( laser_pin, 0 ) # Laser off
