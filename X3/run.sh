@@ -5,6 +5,9 @@ set -eux
 cd /home/pi/Lab/Robot_Mamorukun3/X3/
 
 sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/green_led_on.py
+
+sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/arm_control.py -10 0
+sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/motor.py 10
 sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/arm_init.py
 
 for i in {1..3} ; do

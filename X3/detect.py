@@ -85,7 +85,7 @@ print(cmd)
 subprocess.check_call(cmd.split())
 
 # motor controll
-cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/motor.py"
+cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X3/motor.py {}".format(3)
 print(cmd)
 subprocess.check_call(cmd.split())
 
