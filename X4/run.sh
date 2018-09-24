@@ -23,4 +23,4 @@ done
 sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/arm_init.py
 sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/green_led_off.py
 
-sleep 3s
+sudo shutdown -h now
