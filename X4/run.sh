@@ -13,6 +13,7 @@ sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/arm_init.py
 for i in {1..3} ; do
   echo ${i}
   vcgencmd measure_temp
+  sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/red_led_on.py
   sh /home/pi/Lab/Robot_Mamorukun3/X4/camera.sh
   python3 /home/pi/Lab/Robot_Mamorukun3/X4/detect.py
   vcgencmd measure_temp

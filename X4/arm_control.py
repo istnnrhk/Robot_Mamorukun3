@@ -45,12 +45,18 @@ pi.pwmSetClock(375)
 #--------------------------------------------------------
 # MAIN PROCESS
 #--------------------------------------------------------
-args = sys.argv
 
-azimuth_angle   = int(args[1])
-elevation_angle = int(args[2])
-shooting_sec    = int(args[3])
-keep_led        = int(args[4])
+def main():
+  args = sys.argv
 
-arm_control( azimuth_angle, elevation_angle, shooting_sec, keep_led)
+  azimuth_angle   = int(args[1])
+  elevation_angle = int(args[2])
+  shooting_sec    = int(args[3])
+  keep_led        = int(args[4])
 
+  arm_control( azimuth_angle, elevation_angle, shooting_sec, keep_led)
+
+
+
+if __name__ == '__main__':
+  main()

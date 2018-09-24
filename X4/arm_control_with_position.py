@@ -52,4 +52,4 @@ else:
   y_degree = -7
 
 # debugging now
-arm_control( x_degree, y_degree, 0.1, 0 )
+arm_control.arm_control( x_degree, y_degree, 0.1, 0 )

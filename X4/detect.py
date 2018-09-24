@@ -79,6 +79,13 @@ if False:
     cv2.destroyAllWindows()
 
 
+
+# red led off
+cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/red_led_off.py"
+print(cmd)
+subprocess.check_call(cmd.split())
+
+    
 # servo controll
 cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/arm_control_with_position.py {} {}".format(target_x, target_y)
 print(cmd)
@@ -90,6 +97,6 @@ print(cmd)
 subprocess.check_call(cmd.split())
 
 # home position
-cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/arm_control.py {} {}".format(0, 0, 1, 0)
+cmd = "sudo python3 /home/pi/Lab/Robot_Mamorukun3/X4/arm_control.py {} {} {} {}".format(0, 0, 1, 0)
 print(cmd)
 subprocess.check_call(cmd.split())
